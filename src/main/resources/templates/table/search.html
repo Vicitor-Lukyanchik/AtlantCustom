@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск</title>
+    <link rel="stylesheet" href="styles/search.css">
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+
+<header class="header">
+    <div class="title" style="background-image: url(images/logo.png);">
+    </div>
+    <div class="log_out">
+        <a class="tag tag_out" href="/login">Выйти</a>
+    </div>
+</header>
+
+
+<form th:method="POST" th:action="@{/search(token=${token},number=${number})}">
+
+    <div class="search">
+        <label class="form__label" for="number">№ таможенного документа</label>
+        <input class="form__input" type="text" th:name="number" id="number" placeholder="№ таможенного документа"/>
+        <input class='lf--submit' id="find" type="submit" value="Искать"/><br/>
+    </div>
+
+    <div class="error_page">
+        <div class="error" th:if="${isNotFind}">
+            <div class="error-message" th:text="${errorMessage}"></div>
+        </div>
+    </div>
+</form>
+
+
+<script type="text/javascript" th:src="@{/js/search.js}"></script>
+</body>
+</html>
