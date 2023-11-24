@@ -25,11 +25,11 @@ public class DbfToDbMigratorImpl implements DbfToDbMigrator {
     @PostConstruct
     public void migrate() {
         exportService.deleteAll();
-        importService.deleteAll();
+        //importService.deleteAll();
         declarationService.deleteAll();
 
         declarationService.importDeclarationsFromDbf(DECLARATION_DBF_PATH);
         exportService.importExportsFromDbf(EXPORT_DBF_PATH);
-        importService.importImportsFromDbf(IMPORT_DBF_PATH);
+        //importService.importImportsFromDbf(IMPORT_DBF_PATH);
     }
 }
