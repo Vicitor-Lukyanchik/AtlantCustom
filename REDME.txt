@@ -1,0 +1,7 @@
+TomCat 9
+    Uncomment in CustomApplication
+    Uncomment in pom.xml dependency spring-boot-starter-tomcat
+    Package war file (mvn clean, install)
+    Put this war in C:\Java\tomcat\apache-tomcat-9.0.82\webapps
+    cmd from C:\Java\tomcat\apache-tomcat-9.0.82\bin and use command [startup.bat]
+    If tomcat do not stop use command shutdown.bat

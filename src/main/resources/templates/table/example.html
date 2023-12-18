@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Импорт</title>
+    <link rel="stylesheet" href="styles/import.css">
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+
+<header class="header">
+    <div class="title" style="background-image: url(images/logo.png);">
+    </div>
+    <div class="log_out">
+        <a class="tag tag_out" th:href="@{/login(token=${token})}">Выйти
+            <svg class="svg_log_out" viewBox="0 0 512 512">
+                <path d="M192 365.8L302 256 192 146.2l0 53.8c0 13.3-10.7 24-24 24L48 224l0 64 120 0c13.3 0 24 10.7 24 24l0 53.8zM352 256c0 11.5-4.6 22.5-12.7 30.6L223.2 402.4c-8.7 8.7-20.5 13.6-32.8 13.6c-25.6 0-46.4-20.8-46.4-46.4l0-33.6-96 0c-26.5 0-48-21.5-48-48l0-64c0-26.5 21.5-48 48-48l96 0 0-33.6c0-25.6 20.8-46.4 46.4-46.4c12.3 0 24.1 4.9 32.8 13.6L339.3 225.4c8.1 8.1 12.7 19.1 12.7 30.6zm-8 176l80 0c22.1 0 40-17.9 40-40l0-272c0-22.1-17.9-40-40-40l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l80 0c48.6 0 88 39.4 88 88l0 272c0 48.6-39.4 88-88 88l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+            </svg></a>
+    </div>
+    <div class="log_search">
+        <a class="tag tag_back" id="back" th:href="@{/search(token=${token})}">Назад
+            <svg class="svg_log_cancel" viewBox="0 0 512 512">
+                <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+        </a>
+    </div>
+</header>
+
+<div class="container">
+    <form class="form">
+        <table class="table">
+            <thead class="tbl-header">
+            <tr>
+                <th class="first_column">Номер декларации</th>
+                <th>Дата декларации</th>
+                <th>Номер договора</th>
+                <th>Дата договора</th>
+                <th>Номер заявления</th>
+                <th class="last_column">Наименование фирмы</th>
+            </tr>
+            </thead>
+            <tbody class="tbl-content-declaration">
+            <tr>
+                <td class="first_column" th:text="${declaration.getNumber()}"/>
+                <td th:text="${declaration.getDate()}"/>
+                <td th:text="${declaration.getContractNumber()}"/>
+                <td th:text="${declaration.getContractDate()}"/>
+                <td th:text="${declaration.getImportApplicationNumber()}"/>
+                <td th:text="${declaration.getFirmName()}"/>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<div class="name_export">Сведения об Импортных операциях по номеру декларации №<b style="font-weight: 500;"
+                                                                                   th:text="${number}"></b></div>
+<div class="name_export">Приход</div>
+
+<div class="main_container">
+    <form class="form">
+        <div class="scroll-bar">
+            <table class="table" id="table">
+                <thead class="tbl-header">
+                <tr class="sorted_rows">
+                    <th class="first_column" onclick="sortTable(13)">Склад<b class="b">&#8645;</b>
+                    <th onclick="sortTableNumbers(7)">Номер докумета<b class="b">&#8645;</b>
+                        <div class="line" id="7"></div>
+                    </th>
+                        <div class="line" id="13"></div>
+                    </th>
+                    <th onclick="sortTable(5)">Дата прихода<b class="b">&#8645;</b>
+                        <div class="line" id="5"></div>
+                    </th>
+                    <th onclick="sortTable(10)">Номер сопроводительного документа<b class="b">&#8645;</b>
+                        <div class="line" id="10"></div>
+                    </th>
+                    <th onclick="sortTable(11)">Серия сопроводительного документа<b class="b">&#8645;</b>
+                        <div class="line" id="11"></div>
+                    </th>
+                    <th onclick="sortTable(12)">Дата сопроводительного документа<b class="b">&#8645;</b>
+                        <div class="line" id="12"></div>
+                    </th>
+                    <th onclick="sortTable(0)">Наименование товара<b class="b">&#8645;</b>
+                        <div class="line" id="0"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(1)">Цена<b class="b">&#8645;</b>
+                        <div class="line" id="1"></div>
+                    </th>
+                    <th onclick="sortTable(2)">Валюта<b class="b">&#8645;</b>
+                        <div class="line" id="2"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(3)">Количество<b class="b">&#8645;</b>
+                        <div class="line" id="3"></div>
+                    </th>
+                    <th onclick="sortTable(4)">Еденица измерения<b class="b">&#8645;</b>
+                        <div class="line" id="4"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(9)">Отчетный год-месяц<b class="b">&#8645;</b>
+                        <div class="line" id="9"></div>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody class="tbl-content">
+                <tr th:each="arrival : ${arrivals.instanceMap}">
+                    <td class="first_column" th:text="${arrival.key}"></td>
+
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getDocumentNumber()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getArrivalDate()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getAccompanyingDocumentNumber()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getAccompanyingDocumentSeries()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getAccompanyingDocumentDate()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getProductName()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getProductPrice()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getCurrency()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getTurnoverCount()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getUnit()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="arr : ${arrival.value}">
+                            <b th:text="${arr.getReportingYearMonth()}"></b>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+<div class="name_export">Расход</div>
+
+<div class="main_container">
+    <form class="form">
+        <div class="scroll-bar">
+            <table class="table" id="table1">
+                <thead class="tbl-header">
+                <tr class="sorted_rows">
+                    <th onclick="sortTable(33)" class="first_column">Склад<b class="b">&#8645;</b>
+                        <div class="line" id="33"></div>
+                    </th>
+                    <th onclick="sortTable(34)">Цех получатель<b class="b">&#8645;</b>
+                        <div class="line" id="34"></div>
+                    </th>
+                    <th onclick="sortTable(25)">Дата прихода<b class="b">&#8645;</b>
+                        <div class="line" id="25"></div>
+                    </th>
+                    <th onclick="sortTable(20)">Наименование товара<b class="b">&#8645;</b>
+                        <div class="line" id="20"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(21)">Цена<b class="b">&#8645;</b>
+                        <div class="line" id="21"></div>
+                    </th>
+                    <th onclick="sortTable(22)">Валюта<b class="b">&#8645;</b>
+                        <div class="line" id="22"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(23)">Количество<b class="b">&#8645;</b>
+                        <div class="line" id="23"></div>
+                    </th>
+                    <th onclick="sortTable(24)">Еденица измерения<b class="b">&#8645;</b>
+                        <div class="line" id="24"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(27)">Номер докумета<b class="b">&#8645;</b>
+                        <div class="line" id="27"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(29)">Отчетный год-месяц<b class="b">&#8645;</b>
+                        <div class="line" id="29"></div>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody class="tbl-content">
+                <tr th:each="consumption : ${consumptions.instanceMap}" >
+                    <td class="first_column" th:text="${consumption.key}"></td>
+                    <td>
+                        <div th:each="cons : ${consumption.value}">
+                            <b th:text="${cons.getWorkshopReceiver()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="cons : ${consumption.value}">
+                            <b th:text="${cons.getDocumentNumber()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="cons : ${consumption.value}">
+                            <b th:text="${cons.getArrivalDate()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="cons : ${consumption.value}">
+                            <b th:text="${cons.getProductName()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="cons : ${consumption.value}">
+                            <b th:text="${cons.getProductPrice()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="cons : ${consumption.value}">
+                            <b th:text="${cons.getCurrency()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="cons : ${consumption.value}">
+                            <b th:text="${cons.getTurnoverCount()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="cons : ${consumption.value}">
+                            <b th:text="${cons.getUnit()}"></b>
+                        </div>
+                    </td>
+                    <td>
+                        <div th:each="cons : ${consumption.value}">
+                            <b th:text="${cons.getReportingYearMonth()}"></b>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </form>
+</div>
+
+<footer class="footer">
+    <div class="author">Дизайн и разработка сайта: Лукьянччик Виктор tg: @vicitor_luk</div>
+    <div class="organization"><a href="https://bsz.by/">&#169; Филиал ЗАО "Атлант"-БСЗ</a></div>
+</footer>
+
+<script type="text/javascript" th:src="@{/js/tableSorter.js}">
+</script>
+</body>
+</html>

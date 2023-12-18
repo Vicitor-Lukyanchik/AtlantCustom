@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ошибка</title>
+    <link rel="stylesheet" href="styles/error.css">
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+
+<header class="header">
+    <div class="title" style="background-image: url(images/logo.png);">
+    </div>
+</header>
+<div class="hit-main">
+    <div class="hit">Error</div>
+    <div class="hit-text hit">Oops, this is error page, please <a id="find" class="span" href="/login">click here</a></div>
+</div>
+
+<script>
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.keyCode == 13) {
+            document.getElementById('find').click();
+        }
+    };
+</script>
+</body>
+</html>
