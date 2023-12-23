@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+    <link rel="stylesheet"  th:href="@{/styles/user_index.css}">
+    <link th:href="@{/images/favicon.ico}" rel="shortcut icon" type="image/x-icon">
+    <script type="text/javascript" th:src="@{/jquery/jquery-3.7.1.js}"></script>
+    <script type="text/javascript" th:src="@{/js/TableSorter.js}"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="title" th:style="'background-image: url(' + @{/images/logo.png} + ');'">
+    </div>
+    <div class="log_out">
+        <a class="tag tag_out" th:href="@{/login(token=${token})}">Выйти
+            <svg class="svg_log_out" viewBox="0 0 512 512">
+                <path fill="#e5e5e3" class="path_out"
+                      d="M192 365.8L302 256 192 146.2l0 53.8c0 13.3-10.7 24-24 24L48 224l0 64 120 0c13.3 0 24 10.7 24 24l0 53.8zM352 256c0 11.5-4.6 22.5-12.7 30.6L223.2 402.4c-8.7 8.7-20.5 13.6-32.8 13.6c-25.6 0-46.4-20.8-46.4-46.4l0-33.6-96 0c-26.5 0-48-21.5-48-48l0-64c0-26.5 21.5-48 48-48l96 0 0-33.6c0-25.6 20.8-46.4 46.4-46.4c12.3 0 24.1 4.9 32.8 13.6L339.3 225.4c8.1 8.1 12.7 19.1 12.7 30.6zm-8 176l80 0c22.1 0 40-17.9 40-40l0-272c0-22.1-17.9-40-40-40l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l80 0c48.6 0 88 39.4 88 88l0 272c0 48.6-39.4 88-88 88l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+            </svg>
+        </a>
+    </div>
+</header>
+
+<div class="name_export">Сведения о пользователях</div>
+
+<div class="main_container">
+    <form class="form">
+        <div class="scroll-bar" id="table-container">
+            <table class="fixtable-fixed table" id="table">
+                <thead class="tbl-header main-tbl-header">
+                <tr class="sorted_rows">
+                    <th onclick="sortTable(0)" class="first_column">Идентификатор пользователя<b class="b">&#8645;</b>
+                        <div class="line" id="0"></div>
+                    </th>
+                    <th onclick="sortTable(1)">Логин пользователя<b class="b">&#8645;</b>
+                        <div class="line" id="1"></div>
+                    </th>
+                    <th class="th_delete">Удаление</th>
+                </tr>
+                </thead>
+
+                <tbody class="tbl-content">
+                <tr th:each="user : ${users}">
+                    <td class="first_column update_user"><a class="id_button" th:text="${user.getId()}"
+                                                th:href="@{/admin/user/update/{id}(id=${user.getId()},token=${token})}"></a>
+                    </td>
+                    <td class="update_user" th:text="${user.getUsername()}"/>
+                    <td class="tr_delete_button">
+                        <a class="delete_button"
+                           th:href="@{/admin/user/delete/{id}(id=${user.getId()},token=${token})}">
+                            <svg class="svg_log_out" viewBox="0 0 512 512">
+                                <path fill="#e5e5e3" class="path_out"
+                                      d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </form>
+    <div class="create_user">
+        <a th:href="@{/admin/user/new(token=${token})}">Создать нового пользователя</a>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="author">Дизайн и разработка сайта: Лукьянччик Виктор tg: @vicitor_luk</div>
+    <div class="organization"><a href="https://bsz.by/">&#169; Филиал ЗАО "Атлант"-БСЗ</a></div>
+</footer>
+
+<script>
+    $(".update_user").on('click', function() {
+        var row = $(this).closest('tr');
+        var clickedCell = row.find("td:eq(0)");
+        clickedCell.find("a.id_button")[0].click();
+    });
+</script>
+</body>
+</html>

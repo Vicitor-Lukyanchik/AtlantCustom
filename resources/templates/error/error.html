@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ошибка</title>
+    <link rel="stylesheet" th:href="@{/styles/error.css}">
+    <link th:href="@{/images/favicon.ico}" rel="shortcut icon" type="image/x-icon">
+    <script type="text/javascript" th:src="@{/js/ErrorMenuBuilder.js}"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="title" th:style="'background-image: url(' + @{/images/logo.png} + ');'">
+    </div>
+</header>
+<div class="hit-main">
+    <div class="hit">Error</div>
+    <div class="hit-text hit">Oops, this is error page, please <a id="find" class="span" th:href="@{/login(token=${token})}">click here</a></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:class="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Импорт</title>
+    <link rel="stylesheet" th:href="@{/styles/import.css}">
+    <link th:href="@{/images/favicon.ico}" rel="shortcut icon" type="image/x-icon">
+    <script type="text/javascript" th:src="@{/jquery/jquery-3.7.1.js}"></script>
+    <script type="text/javascript" th:src="@{/js/TableSorter.js}"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="title" th:style="'background-image: url(' + @{/images/logo.png} + ');'">
+    </div>
+    <div class="log_out">
+        <a class="tag tag_out" th:href="@{/login(token=${token})}">Выйти
+            <svg class="svg_log_out" viewBox="0 0 512 512">
+                <path fill="#e5e5e3" class="path_out" d="M192 365.8L302 256 192 146.2l0 53.8c0 13.3-10.7 24-24 24L48 224l0 64 120 0c13.3 0 24 10.7 24 24l0 53.8zM352 256c0 11.5-4.6 22.5-12.7 30.6L223.2 402.4c-8.7 8.7-20.5 13.6-32.8 13.6c-25.6 0-46.4-20.8-46.4-46.4l0-33.6-96 0c-26.5 0-48-21.5-48-48l0-64c0-26.5 21.5-48 48-48l96 0 0-33.6c0-25.6 20.8-46.4 46.4-46.4c12.3 0 24.1 4.9 32.8 13.6L339.3 225.4c8.1 8.1 12.7 19.1 12.7 30.6zm-8 176l80 0c22.1 0 40-17.9 40-40l0-272c0-22.1-17.9-40-40-40l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l80 0c48.6 0 88 39.4 88 88l0 272c0 48.6-39.4 88-88 88l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+            </svg></a>
+    </div>
+    <div class="log_search">
+        <a class="tag tag_back" id="back" th:href="@{/search(token=${token})}">Поиск
+            <svg class="svg_log_cancel" viewBox="0 0 512 512">
+                <path fill="#e5e5e3" class="path_search" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+        </a>
+    </div>
+</header>
+
+<div class="container">
+    <form class="form">
+        <table class="table">
+            <thead class="tbl-header">
+            <tr>
+                <th class="first_column">Номер декларации</th>
+                <th>Дата декларации</th>
+                <th>Номер договора</th>
+                <th>Дата договора</th>
+                <th>Номер заявления</th>
+                <th class="last_column">Наименование фирмы</th>
+            </tr>
+            </thead>
+            <tbody class="tbl-content-declaration">
+            <tr>
+                <td class="first_column" th:text="${declaration.getNumber()}"/>
+                <td th:text="${declaration.getDate()}"/>
+                <td th:text="${declaration.getContractNumber()}"/>
+                <td th:text="${declaration.getContractDate()}"/>
+                <td th:text="${declaration.getImportApplicationNumber()}"/>
+                <td th:text="${declaration.getFirmName()}"/>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<div class="name_export">Сведения об Импортных операциях по номеру декларации №<b th:text="${number}"></b></div>
+<div class="name_export">Приход</div>
+
+<div class="main_container">
+    <form class="form">
+        <div class="scroll-bar">
+            <table class="table" id="table">
+                <thead class="tbl-header">
+                <tr class="sorted_rows">
+                    <th class="first_column" onclick="sortTable(0)">Склад<b class="b">&#8645;</b>
+                        <div class="line" id="0"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(1)">Номер докумета<b class="b">&#8645;</b>
+                        <div class="line" id="1"></div>
+                    </th>
+                    <th onclick="sortTable(2)">Дата прихода<b class="b">&#8645;</b>
+                        <div class="line" id="2"></div>
+                    </th>
+                    <th onclick="sortTable(3)">Номер сопр. документа<b class="b">&#8645;</b>
+                        <div class="line" id="3"></div>
+                    </th>
+<!--                    <th onclick="sortTable(11)">Серия сопроводительного документа<b class="b">&#8645;</b>-->
+<!--                        <div class="line" id="11"></div>-->
+<!--                    </th>-->
+                    <th onclick="sortTable(4)">Дата сопр. документа<b class="b">&#8645;</b>
+                        <div class="line" id="4"></div>
+                    </th>
+                    <th class="table_product_name" onclick="sortTable(5)">Наименование товара<b class="b">&#8645;</b>
+                        <div class="line" id="5"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(6)">Цена<b class="b">&#8645;</b>
+                        <div class="line" id="6"></div>
+                    </th>
+                    <th onclick="sortTable(7)">Валюта<b class="b">&#8645;</b>
+                        <div class="line" id="7"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(8)">Количество<b class="b">&#8645;</b>
+                        <div class="line" id="8"></div>
+                    </th>
+                    <th onclick="sortTable(9)">Ед. изм.<b class="b">&#8645;</b>
+                        <div class="line" id="9"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(10)">Отчетный год-месяц<b class="b">&#8645;</b>
+                        <div class="line" id="10"></div>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody class="tbody-arrival tbl-content-arrival tbl-content">
+                <tr class="tbl-line" th:each="arrival : ${arrivals}">
+                    <td class="first_column" th:text="${arrival.getStorehouseNumber()}"/>
+                    <td th:text="${arrival.getDocumentNumber()}"/>
+                    <td th:text="${arrival.getArrivalDate()}"/>
+                    <td th:text="${arrival.getAccompanyingDocumentNumber()}"/>
+<!--                    <td th:text="${arrival.getAccompanyingDocumentSeries()}"/>-->
+                    <td th:text="${arrival.getAccompanyingDocumentDate()}"/>
+                    <td th:text="${arrival.getProductName()}"/>
+                    <td th:text="${arrival.getProductPrice()}"/>
+                    <td th:text="${arrival.getCurrency()}"/>
+                    <td th:text="${arrival.getTurnoverCount()}"/>
+                    <td th:text="${arrival.getUnit()}"/>
+                    <td th:text="${arrival.getReportingYearMonth()}"/>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </form>
+</div>
+
+<div class="name_export">Расход</div>
+
+<div class="main_container">
+    <form class="form">
+        <div class="scroll-bar">
+            <table class="table" id="table1">
+                <thead class="tbl-header">
+                <tr class="sorted_rows">
+                    <th onclick="sortTable(0,33)" class="first_column">Склад<b class="b">&#8645;</b>
+                        <div class="line" id="33"></div>
+                    </th>
+                    <th onclick="sortTable(1, 34)">Цех получатель<b class="b">&#8645;</b>
+                        <div class="line" id="34"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(2, 27)">Номер докумета<b class="b">&#8645;</b>
+                        <div class="line" id="27"></div>
+                    </th>
+                    <th onclick="sortTable(3, 25)">Дата расхода<b class="b">&#8645;</b>
+                        <div class="line" id="25"></div>
+                    </th>
+                    <th onclick="sortTable(4, 20)">Наименование товара<b class="b">&#8645;</b>
+                        <div class="line" id="20"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(5, 21)">Цена<b class="b">&#8645;</b>
+                        <div class="line" id="21"></div>
+                    </th>
+                    <th onclick="sortTable(6, 22)">Валюта<b class="b">&#8645;</b>
+                        <div class="line" id="22"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(7, 23)">Количество<b class="b">&#8645;</b>
+                        <div class="line" id="23"></div>
+                    </th>
+                    <th onclick="sortTable(8, 24)">Ед. изм.<b class="b">&#8645;</b>
+                        <div class="line" id="24"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(9, 29)">Отчетный год-месяц<b class="b">&#8645;</b>
+                        <div class="line" id="29"></div>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody class="tbl-content">
+                <tr th:each="consumption : ${consumptions}">
+                    <td class="first_column" th:text="${consumption.getStorehouseNumber()}"/>
+                    <td th:text="${consumption.getWorkshopReceiver()}"/>
+                    <td th:text="${consumption.getDocumentNumber()}"/>
+                    <td th:text="${consumption.getArrivalDate()}"/>
+                    <td th:text="${consumption.getProductName()}"/>
+                    <td th:text="${consumption.getProductPrice()}"/>
+                    <td th:text="${consumption.getCurrency()}"/>
+                    <td th:text="${consumption.getTurnoverCount()}"/>
+                    <td th:text="${consumption.getUnit()}"/>
+                    <td th:text="${consumption.getReportingYearMonth()}"/>
+
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </form>
+</div>
+
+<footer class="footer">
+    <div class="author">Дизайн и разработка сайта: Лукьянччик Виктор tg: @vicitor_luk</div>
+    <div class="organization"><a href="https://bsz.by/">&#169; Филиал ЗАО "Атлант"-БСЗ</a></div>
+</footer>
+
+</body>
+
+<script>
+
+    const colorFindedRows = "#2ba19f";
+    var oldRows = [];
+    var oldRowId = "current_row";
+    var rowId = 0;
+
+    $(".tbl-line").on('click', function() {
+        var currentRow=$(this).closest("tr");
+        changeRowColor(currentRow);
+
+        var name = currentRow.find("td:eq(5)").text();
+        var price = currentRow.find("td:eq(6)").text();
+        var currency = currentRow.find("td:eq(7)").text();
+        var unit = currentRow.find("td:eq(9)").text();
+
+        var rows = findRows(name, price, currency, unit);
+        highlightRows(rows);
+        returnRowsColor(rows);
+    });
+
+    function changeRowColor(row) {
+        if(oldRowId != row.id){
+            const newId = "current_row" + rowId++;
+            row.attr('id', newId);
+
+            row.addClass("arrival-tr-clicked");
+            $("#" + oldRowId).removeClass("arrival-tr-clicked");
+
+            oldRowId=newId;
+        }
+    }
+
+    function findRows(name, price, currency, unit) {
+        var table = document.getElementById('table1');
+        var result = [];
+        var rowLength = table.rows.length;
+
+        for(var i=1; i<rowLength; i+=1) {
+            var cellName = table.rows[i].cells[4].innerText;
+            var cellPrice = table.rows[i].cells[5].innerText;
+            var cellCurrency = table.rows[i].cells[6].innerText;
+            var cellUnit = table.rows[i].cells[8].innerText;
+            if (name==cellName && price==cellPrice && currency==cellCurrency && unit==cellUnit) {
+                table.rows[i].setAttribute("id", "row" + i);
+                result.push(table.rows[i]);
+            }
+        }
+        return result;
+    }
+
+    function highlightRows(rows){
+        for(var i=0; i<rows.length; i+=1) {
+            var id = rows[i].id;
+            $("#" + id).prependTo("#table1 > tbody");
+            $("#" + id).css("background-color", colorFindedRows);
+        }
+    }
+
+    function returnRowsColor(rows) {
+        for(var i=0; i<oldRows.length; i+=1) {
+            var id = oldRows[i].id;
+            if(!isExist(rows, id)){
+                $("#" + id).css("background-color", "transparent");
+            }
+        }
+        oldRows = rows;
+    }
+
+    function isExist(rows, id){
+        for(var i=0; i<rows.length; i+=1) {
+            if(id == rows[i].id) {
+                return true;
+            }
+        }
+        return false;
+    }
+</script>
+</html>
