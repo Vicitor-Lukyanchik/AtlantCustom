@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибка</title>
+    <link rel="stylesheet" th:href="@{/styles/error.css?version=1}">
+    <link rel="stylesheet" th:href="@{/styles/adapter/error.css?version=1}">
+    <link th:href="@{/images/favicon.ico}" rel="shortcut icon" type="image/x-icon">
+    <script type="text/javascript" th:src="@{/js/ErrorMenuBuilder.js}"></script>
+</head>
+<body>
+
+<header class="header">
+    <a href="https://bsz.by/" target=»_blank»>
+        <div  class="title" th:style="'background-image: url(' + @{/images/logo.png} + ');'"></div>
+    </a>
+</header>
+<div class="hit-main">
+    <div class="hit">401</div>
+    <div class="hit-text hit">Уупс, ошибка авторизации, пожалуйста <a id="find" class="span" th:href="@{/login(token=${token})}">нажми сюда</a></div>
+</div>
+
+<div th:if="${!errorMessage.isEmpty()}" class="error_message" th:text="${errorMessage}"></div>
+
+</body>
+</html>

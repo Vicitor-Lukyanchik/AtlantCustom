@@ -1,0 +1,141 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+html {
+    height: 100%
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding-top: 22vh;
+    background: linear-gradient(135deg, #242e4d, #25386c);
+    transition:.5s;
+    font-family: Verdana, sans-serif;
+    font-size: 1.5em;
+}
+
+&:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+.title {
+    width: 300px;
+    height: 67px;
+    background-image: url(images/logo.png);
+    margin-bottom: 1em;
+    background-size: cover;
+}
+
+.login-form {
+    width: 15em;
+    padding: 1em 2em 2em;
+    position: relative;
+    background: rgba(0, 0, 0, .15);
+}
+
+.login-form::before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+
+    background: linear-gradient(
+    to right,
+    #35c3c1,
+    #00d6b7
+    );
+}
+
+.flex-row {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.lf--label {
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5f6f8;
+    cursor: pointer;
+}
+
+.lf--input {
+    flex: 1;
+    padding: 1em;
+    border: 0;
+    color: #8f8f8f;
+    font-size: 1rem;
+    font-family: Verdana, sans-serif;
+}
+
+.lf--input:focus{
+    outline: none;
+    transition: transform .15s ease;
+    transform: scale(1.1);
+}
+
+.lf--submit {
+    display: block;
+    padding: 1em;
+    width: 100%;
+    background: linear-gradient(
+    to right, #35c3c1, #00d6b7);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: .75em;
+    font-weight: 600;
+    text-shadow: 0 1px 0 #67636a;
+    transition: .5s;
+    font-family: Verdana, sans-serif;
+}
+
+.lf--submit:focus {
+    outline: none;
+    transition: transform .15s ease;
+    transform: scale(1.1);
+}
+
+.lf--submit:hover {
+    background: linear-gradient(
+    to left, #39d3d1, #00e8c8);
+}
+
+.lf--forgot {
+    margin-top: 1em;
+    color: #1bcdbb;
+    font-size: .65em;
+    text-align: center;
+    position: relative;
+}
+
+::placeholder {
+    color: #8e8e8e;
+}
+
+.error {
+    margin-bottom: 15px;
+    color: #b60000;
+    font-size: 13px;
+    word-break: break-word;
+}
+
+.error_page {
+    min-height: 1em;
+}

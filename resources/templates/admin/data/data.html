@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обновления</title>
+    <link rel="stylesheet" th:href="@{/styles/admin_data.css?version=1}">
+    <link rel="stylesheet" th:href="@{/styles/loading.css?version=1}">
+    <link rel="stylesheet" th:href="@{/styles/setting_popup.css?version=1}">
+    <link rel="stylesheet" th:href="@{/icons/icons.css?version=1}">
+    <link rel="stylesheet" th:href="@{/styles/adapter/admin_data.css?version=1}">
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+    <script type="text/javascript" th:src="@{/jquery/jquery-3.7.1.js}"></script>
+    <script type="text/javascript" th:src="@{/js/TableSorter.js}"></script>
+</head>
+<body>
+
+<header class="header">
+    <a href="https://bsz.by/" target=»_blank»>
+        <div  class="title" th:style="'background-image: url(' + @{/images/logo.png} + ');'"></div>
+    </a>
+    <div class="log_out">
+        <a class="tag tag_out" th:href="@{/login(token=${token})}">Выйти
+            <svg class="svg_log_out" viewBox="0 0 512 512">
+                <path fill="#e5e5e3" class="path_out"
+                      d="M192 365.8L302 256 192 146.2l0 53.8c0 13.3-10.7 24-24 24L48 224l0 64 120 0c13.3 0 24 10.7 24 24l0 53.8zM352 256c0 11.5-4.6 22.5-12.7 30.6L223.2 402.4c-8.7 8.7-20.5 13.6-32.8 13.6c-25.6 0-46.4-20.8-46.4-46.4l0-33.6-96 0c-26.5 0-48-21.5-48-48l0-64c0-26.5 21.5-48 48-48l96 0 0-33.6c0-25.6 20.8-46.4 46.4-46.4c12.3 0 24.1 4.9 32.8 13.6L339.3 225.4c8.1 8.1 12.7 19.1 12.7 30.6zm-8 176l80 0c22.1 0 40-17.9 40-40l0-272c0-22.1-17.9-40-40-40l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l80 0c48.6 0 88 39.4 88 88l0 272c0 48.6-39.4 88-88 88l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+            </svg>
+        </a>
+    </div>
+    <div class="log_search">
+        <a class="tag tag_back" id="back" th:href="@{/admin/menu(token=${token})}">Меню
+            <svg class="svg_log_cancel" viewBox="0 0 512 512">
+                <path fill="#e5e5e3" class="path_search"
+                      d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+            </svg>
+        </a>
+    </div>
+    <div class="log_settings">
+        <input class="tag tag_back modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
+        <label for="modal-btn">Настройки
+            <svg class="svg_log_settings" viewBox="0 0 512 512">
+                <path fill="#e5e5e3" class="path_search"
+                      d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/>
+            </svg>
+        </label>
+        <div class="modal">
+            <div class="modal-wrap">
+                <form th:method="Post" th:action="@{/admin/data/settings(token=${token})}" >
+                    <h1>Автосохранение</h1>
+
+                    <div class="checkbox_div">
+                        <b>Включить/Выключить</b>
+                        <input onchange="openSaveButton()" class="on_off_checkbox" name="isAutoOn" type="checkbox" id="switch" th:checked="${isAutoOn}"/>
+                        <label class="on_off_label" for="switch"></label>
+                    </div>
+
+                    <div class="box">
+                        <select onchange="openSaveButton()" id="ddlViewBy" th:field="*{times}" >
+                            <option
+                                    th:each="time : ${times}"
+                                    th:value="${time}"
+                                    th:text="${time}"></option>
+                        </select>
+                    </div>
+
+                    <input type="text" style="opacity: 0;visibility: hidden;"  name="selectedTime" id="selectedTime" th:value="${selectedTime}"/>
+
+                    <input onclick="setSelectedTime()" id="save_settings" class='lf--submit--non setting_submit' type='submit' value='Cохранить' disabled>
+                    <b class="last_date">Last auto update <b th:text="${lastUpdate}"></b></b>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="name_export">Сведения об обновлениях</div>
+
+<div class="main_container">
+    <form class="form">
+        <div class="scroll-bar" id="table-container">
+            <table class="fixtable-fixed table" id="table">
+                <thead class="tbl-header main-tbl-header">
+                <tr class="sorted_rows">
+                    <th onclick="sortTable(0)" class="first_column">Название<b class="b">&#8645;</b>
+                        <div class="line" id="0"></div>
+                    </th>
+                    <th onclick="sortTable(1)">Дата последнего изменения<b class="b">&#8645;</b>
+                        <div class="line" id="1"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(2)">Всего строк<b class="b">&#8645;</b>
+                        <div class="line" id="2"></div>
+                    </th>
+                    <th onclick="sortTableNumbers(3)">Было добавлено<b class="b">&#8645;</b>
+                        <div class="line" id="3"></div>
+                    </th>
+                    <th onclick="sortTable(4)">Путь файла<b class="b">&#8645;</b>
+                        <div class="line" id="4"></div>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody class="tbl-content">
+                <tr th:each="log : ${logs}">
+                    <td class="first_column" th:text="${log.getName()}"/>
+                    <td th:text="${log.getLocalDateTime().format(formatter)}"/>
+                    <td th:text="${log.getAllCount()}"/>
+                    <td th:text="${log.getAddedCount()}"/>
+                    <td th:text="${log.getFilePath()}"/>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <form th:if="${!isActive}" th:method="POST" th:action="@{/admin/data/update(token=${token})}">
+        <input id="migration" class='lf--submit' type='submit' value='Обновить'>
+    </form>
+    <form th:if="${isActive}">
+        <input id="migration1" class='lf--submit--non' type='submit' value='Обновить' disabled/>
+    </form>
+    <form th:method="POST" th:action="@{/admin/data/updateAll(token=${token})}">
+        <input id="all_migration" class='lf--submit' type='submit' value='Полностью мигрировать'>
+    </form>
+    <form th:if="${isExist}" th:method="POST" th:action="@{/admin/data/delete(token=${token})}">
+        <input id="delete" class='lf--submit' type='submit' value='Удалить всё'>
+    </form>
+    <form th:if="${!isExist}">
+        <input id="delete1" class='lf--submit--non' type='submit' value='Удалить всё' disabled/>
+    </form>
+</div>
+<div id="loading" class="loading">
+    <span>З</span>
+    <span>А</span>
+    <span>Г</span>
+    <span>Р</span>
+    <span>У</span>
+    <span>З</span>
+    <span>К</span>
+    <span>А</span>
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+</div>
+
+<footer class="footer">
+    <div class="author">Дизайн и разработка сайта: Лукьянччик Виктор tg: @vicitor_luk</div>
+    <div class="organization"><a href="https://bsz.by/" target=»_blank»>&#169; Филиал ЗАО "Атлант"-БСЗ</a></div>
+</footer>
+
+<script>
+    $(".update_user").on('click', function() {
+        var row = $(this).closest('tr');
+        var clickedCell = row.find("td:eq(0)");
+        clickedCell.find("a.id_button")[0].click();
+    });
+
+    $('#migration').click(function() {
+        loading();
+    });
+
+    $('#migration1').click(function() {
+        loading();
+    });
+
+    $('#delete').click(function() {
+        loading();
+    });
+
+    $('#delete1').click(function() {
+        loading();
+    });
+
+    $('#all_migration').click(function() {
+        loading();
+    });
+
+    function loading(){
+        $('body').css({
+        });
+        $('.lf--submit').css({
+            'pointer-events': 'none'
+        });
+        $('.lf--submit--non').css({
+            'pointer-events': 'none'
+        });
+        $('.tag').css({
+            'pointer-events': 'none'
+        });
+        $('#table').css({
+            'pointer-events': 'none'
+        });
+        $('#delete').css({
+            'pointer-events': 'none'
+        });
+        $('#delete1').css({
+            'pointer-events': 'none'
+        });
+        $('#loading').css({
+            'color': '#fff',
+            'text-shadow': '0px 1px 4px rgba(0,214,183,.2)'
+        });
+    }
+
+    function setSelectedTime() {
+        var e = document.getElementById("ddlViewBy");
+        var value = e.value;
+        var text = e.options[e.selectedIndex].text;
+        document.getElementById("selectedTime").setAttribute('value',text);
+        $('.modal').css({
+            'pointer-events': 'none'
+        });
+        $('.lf--submit').css({
+            'pointer-events': 'none'
+        });
+    }
+
+    function openSaveButton(){
+        if($("#save_settings").hasClass("lf--submit--non")){
+            $("#save_settings").removeClass("lf--submit--non");
+            $("#save_settings").addClass("lf--submit");
+            $("#save_settings").removeAttr("disabled");
+        }
+    }
+
+</script>
+</body>
+</html>

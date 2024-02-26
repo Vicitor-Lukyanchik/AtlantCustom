@@ -1,0 +1,249 @@
+@media (min-width: 300px){
+    .main_container {
+        padding: 8px;
+        margin-bottom: 0vh;
+        text-align: center;
+    }
+
+    .name_export {
+        font-size: 20px;
+        line-height: 20px;
+        margin: 12vh 5em 0em;
+    }
+
+    .scroll-bar {
+        height: 40vh;
+    }
+
+    th b {
+        color: transparent;
+        position: absolute;
+        text-shadow:none;
+        font-size:0;
+    }
+
+    th:hover .b {
+        color: transparent;
+    }
+
+    th:checked .b {
+        color: transparent;
+    }
+
+    .header {
+        height: 45px;
+    }
+
+    .title {
+        height: 20px;
+        margin-top: 5px;
+        width: 140px;
+        margin-left:2%;
+    }
+
+    .log_out {
+        right: 4%;
+    }
+
+    .log_search {
+        right: 15%;
+    }
+
+    th {
+        padding: 15px 5px 15px 5px;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    td {
+        padding-left: 0;
+        text-align: center;
+        font-size: 15px;
+        padding:5px;
+    }
+
+    .author {
+        width: 0px;
+        color: transparent;
+        text-shadow:none;
+        font-size: 0;
+    }
+
+    .footer {
+        padding: 12px 15px;
+        font-size: 11px;
+    }
+
+    .tag{
+        color: transparent;
+        font-size: 0;
+        padding: 0 25px 0 0px;
+    }
+}
+
+@media (min-width: 450px){
+    .header {
+        height: 50px;
+    }
+
+
+    .log_out {
+        right: 4%;
+    }
+
+    .log_search {
+        right: 15%;
+    }
+
+    th {
+        padding: 15px 5px 15px 5px;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    td{
+        padding-left: 0;
+        text-align: center;
+        font-size: 15px;
+        padding:5px;
+    }
+
+    .author {
+        width: 0px;
+        color: transparent;
+        text-shadow:none;
+        font-size: 0;
+    }
+
+    .footer {
+        padding: 12px 15px;
+        font-size: 11px;
+    }
+
+}
+
+@media (min-width: 480px){
+    .log_search {
+        right: 24%;
+    }
+
+
+    th {
+        padding: 15px 5px 15px 5px;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    td{
+        padding-left: 0;
+        text-align: center;
+        font-size: 15px;
+        padding:5px;
+    }
+
+    .author {
+        width: 0px;
+        color: transparent;
+        text-shadow:none;
+        font-size: 0;
+    }
+
+    .footer {
+        padding: 20px 20px;
+    }
+
+    .tag {
+        color: #e5e3e3;
+        font-size: 17px;
+        padding: 0 20px 0 23px;
+        margin: 10px 10px 10px 0;
+    }
+    .title {
+        height: 30px;
+        width: 180px;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 640px){
+    .log_search {
+        right: 21%;
+    }
+
+
+
+
+    th {
+        padding: 15px 5px 15px 15px;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-transform: capitalize;
+    }
+
+    .footer {
+        padding: 20px 60px;
+    }
+
+    td{
+        text-align: center
+        font-size: 15px;
+        padding:5px;
+        padding-left: 5px;
+    }
+}
+
+@media (min-width: 900px){
+    th b {
+        float: right;
+        position: static;
+        color: rgba(255,255,255,0.3);
+        font-size: 15px;
+    }
+
+    th:hover .b {
+        color: rgba(255,255,255,1);
+    }
+
+    th::checked .b {
+        color: rgba(255,255,255,1);
+    }
+
+    .log_search {
+        right: 13%;
+    }
+
+    .title {
+        margin-left: 95px;
+    }
+
+    th{
+        padding: 15px 5px 15px 15px;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    .footer {
+        padding: 20px 80px;
+    }
+
+
+    td{
+        text-align: center;
+        font-size: 15px;
+        padding:5px;
+        padding-left: 7px;
+    }
+
+    .name_export {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 20px;
+        margin: 5vh 3em 0em;
+    }
+    .scroll-bar {
+        height: 50vh;
+    }
+}

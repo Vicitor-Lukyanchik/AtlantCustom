@@ -1,0 +1,341 @@
+@media (min-width: 300px){
+
+    .modal-btn:checked + label:after, .modal-btn:not(:checked) + label:after {
+        top: 29vh;
+        right: 2vh;
+        width: 40px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+    }
+
+    .title {
+        margin-left: 2%;
+    }
+
+    .log_search {
+        right: 14%;
+    }
+
+    .log_settings {
+        right: 27%;
+    }
+
+    .tag{
+        color: transparent;
+        font-size: 0;
+        padding: 0 25px 0 0px;
+    }
+
+    .log_settings label{
+        color: transparent;
+        font-size: 0;
+    }
+
+    .main_container {
+        padding: 8px;
+        margin-bottom: 0vh;
+        text-align: center;
+    }
+
+    .name_export {
+        font-size: 20px;
+        line-height: 20px;
+        margin: 12vh 5em 0em;
+    }
+
+    th b {
+        color: transparent;
+        position: absolute;
+        text-shadow:none;
+        font-size:0;
+    }
+
+    th:hover .b {
+        color: transparent;
+    }
+
+    th::checked .b {
+        color: transparent;
+    }
+
+    .header {
+        height: 45px;
+    }
+
+    .title {
+        height: 20px;
+        margin-top: 5px;
+        width: 140px;
+    }
+
+    th {
+        padding: 5px 5px 5px 5px;
+        font-size: 10px;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    td {
+        padding-left: 0;
+        text-align: center;
+        font-size: 9px;
+        padding:0px;
+    }
+
+    .author {
+        width: 0px;
+        color: transparent;
+        text-shadow:none;
+        font-size: 0;
+    }
+
+    .footer {
+        padding: 12px 15px;
+        font-size: 11px;
+    }
+
+    .scroll-bar {
+        height: 23vh;
+    }
+
+    .loading span{
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 450px){
+    .modal-btn:checked + label:after, .modal-btn:not(:checked) + label:after {
+        top: 29vh;
+        right: 3.2vh;
+        width: 40px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+    }
+
+    .header {
+        height: 50px;
+    }
+
+    .scroll-bar {
+        height: 25vh;
+    }
+
+    th {
+        padding: 5px 5px 5px 5px;
+        font-size: 10px;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    td{
+        padding-left: 0;
+        text-align: center;
+        font-size: 10px;
+        padding:1px;
+    }
+
+    .author {
+        width: 0px;
+        color: transparent;
+        text-shadow:none;
+        font-size: 0;
+    }
+
+    .footer {
+        padding: 12px 15px;
+        font-size: 11px;
+    }
+
+    .loading span{
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 480px){
+    .modal-btn:checked + label:after, .modal-btn:not(:checked) + label:after {
+        top: 29vh;
+        right: 5vh;
+        width: 40px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+    }
+
+    .scroll-bar {
+        height: 28vh;
+    }
+
+
+    th {
+        padding: 15px 5px 15px 5px;
+        font-size: 12px;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    td{
+        padding-left: 0;
+        text-align: center;
+        font-size: 10.4px;
+        padding:2px;
+    }
+
+    .author {
+        width: 0px;
+        color: transparent;
+        text-shadow:none;
+        font-size: 0;
+    }
+
+    .footer {
+        padding: 20px 20px;
+    }
+
+    .loading span{
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 640px){
+    .modal-btn:checked + label:after, .modal-btn:not(:checked) + label:after {
+        top: 7vh;
+        right: 7vh;
+        width: 40px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+    }
+
+    .title {
+        height: 30px;
+        width: 180px;
+        background-size: cover;
+    }
+
+    .tag {
+        color: #e5e3e3;
+        font-size: 17px;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 20px 0 23px;
+        margin: 10px 10px 10px 0;
+    }
+
+    .log_settings label{
+        font-size: 17px;
+        color: #e5e3e3;
+    }
+
+    .log_search {
+        right: 21%;
+    }
+
+    .title {
+        margin-left: 4%;
+    }
+
+    th {
+        padding: 15px 5px 15px 15px;
+        font-size: 15px;
+        text-transform: capitalize;
+    }
+
+    .footer {
+        padding: 20px 60px;
+    }
+
+    td{
+        text-align: center
+        font-size: 15px;
+        padding:5px;
+        padding-left: 5px;
+    }
+
+    .log_settings {
+        right: 35%;
+    }
+
+    .loading span{
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 900px){
+    .scroll-bar {
+        height: 37vh;
+    }
+
+    th b {
+        float: right;
+        position: static;
+        color: rgba(255,255,255,0.3);
+        font-size: 15px;
+    }
+
+    th:checked .b {
+        color: rgba(255,255,255,1);
+    }
+
+    th:hover .b {
+        color: rgba(255,255,255,1);
+    }
+
+    .log_search {
+        right: 13%;
+    }
+
+    .title {
+        margin-left: 95px;
+    }
+
+    th{
+        padding: 15px 5px 15px 15px;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    .footer {
+        padding: 20px 80px;
+    }
+
+
+    td{
+        text-align: center;
+        font-size: 15px;
+        padding:5px;
+        padding-left: 7px;
+    }
+
+    .name_export {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 20px;
+        margin: 5vh 3em 0em;
+    }
+    .scroll-bar {
+        height: 50vh;
+    }
+
+    .log_settings {
+        right: 22%;
+    }
+
+    .loading span{
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 950px){
+
+    .name_export {
+        font-size: 20px;
+        line-height: 20px;
+        margin: 5vh 3em 0em;
+    }
+
+    .scroll-bar {
+        height: 30vh;
+    }
+}
