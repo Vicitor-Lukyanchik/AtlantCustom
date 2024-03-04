@@ -1,0 +1,17 @@
+.body{
+    height: 100vh;
+    background-color: #696969;
+}
+
+.championship{
+    margin-top: 100px;
+    height: 35px;
+    width: 100%;
+    background-color: #404040;
+}
+
+.championship__title{
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: auto 0;
+}
