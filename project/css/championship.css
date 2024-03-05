@@ -1,0 +1,85 @@
+body {
+    background-color: #696969;
+}
+
+
+/* Start championship title */
+
+.championship {
+    padding-top: 50px;
+}
+
+.championship__title {
+    height: 115px;
+    padding: 22.5px 0;
+    border-bottom: .5px solid #404040;
+}
+
+.championship__container__title {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.championship__value {
+    margin-left: 10px;
+    margin: auto 0;
+}
+
+.championship__value-season {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.championship__value-name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.championship__country{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    padding: 15px 0;
+}
+
+.championship__country-name{
+    margin-right: 10px;
+    padding-top: 7px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.75);
+}
+
+/* End championship title */
+
+
+/*  Start championship table*/
+
+.championship__table__title {
+    background-color: #404040;
+    height: 35px;
+}
+
+.championship__container__table__title {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 7px 0;
+}
+/*  End championship table*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
