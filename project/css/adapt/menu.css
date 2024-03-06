@@ -1,0 +1,12 @@
+@media (min-width: 200px){
+    .container__footer{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 550px){
+    .container__footer{
+        width: 500px;
+    }
+}

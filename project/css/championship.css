@@ -1,0 +1,274 @@
+body {
+    background-color: #696969;
+}
+
+
+/* Start championship title */
+
+.championship {
+    padding-top: 50px;
+}
+
+.championship__title {
+    height: 115px;
+    padding: 22.5px 0;
+    border-bottom: .5px solid #404040;
+}
+
+.championship__container__title {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.championship__value {
+    margin-left: 10px;
+    margin: auto 0;
+}
+
+.championship__value-season {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.championship__value-name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.championship__country{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    padding: 15px 0;
+}
+
+.championship__country-name{
+    margin-right: 10px;
+    padding-top: 7px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.75);
+}
+
+/* End championship title */
+
+
+/*  Start championship table*/
+
+.championship__table {
+    box-shadow: 0px 3px 5px #404040;
+}
+
+.championship__table__title {
+    background-color: #404040;
+    height: 35px;
+    padding: 2.5px 0;
+}
+
+.championship__container__table__title {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 7px 0;
+}
+
+.championship__table__header {
+    background-color: rgba(64,64,64,.3);
+    height: 35px;
+    padding: 2.5px 0;
+}
+
+.championship__container__table__header {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 9px 0;
+}
+
+.championship__container__table__header{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.championship__table__header-left{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.championship__table__header-right{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+.championship__table__header-number{
+    width: 30px;
+}
+
+.championship__table__header-team{
+    margin-left: 10px;
+}
+
+.championship__table__header-distinction{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 10px;
+    width: 70px;
+    justify-content: center;
+}
+
+.championship__table__header-score{
+    width: 30px;
+    text-align: center;
+}
+
+.championship__table__header-games{
+    width: 30px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.championship__table__body{
+    height: 55vh;
+    overflow:scroll;
+}
+
+.championship__table__line {
+    height: 50px;
+    padding: 10px 0;
+    border-bottom: .5px solid #404040;
+}
+
+.championship__table__line:hover{
+    background-color: rgba(255,255,255,.1);
+}
+
+.championship__table__lch_line{
+    background-color: rgba(65, 132, 242, .5);
+}
+
+.championship__table__lch_line:hover{
+    background-color: rgba(65, 132, 242, .7);
+}
+
+.championship__table__le_line{
+    background-color: rgba(242, 171, 65, .5);
+}
+
+.championship__table__le_line:hover{
+    background-color: rgba(242, 171, 65, .7);
+}
+
+.championship__table__lk_line{
+    background-color: rgba(65, 210, 242, .5);
+}
+
+.championship__table__lk_line:hover{
+    background-color: rgba(65, 210, 242, .7);
+}
+
+.championship__table__miss_line{
+    background-color: rgba(207, 79, 79, .8);
+}
+
+.championship__table__miss_line:hover{
+    background-color: rgba(207, 79, 79, 1);
+}
+
+.championship__container__table__line {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 9px 0;
+}
+
+.championship__container__table__line{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.championship__table__line-left{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.championship__table__line-right{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+.championship__table__line-number{
+    width: 30px;
+}
+
+.championship__table__line-team{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.championship__table__line-picture{
+    height: 35px;
+    width: 35px;
+}
+
+.championship__table__line-distinction{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 10px;
+    width: 70px;
+    justify-content: center;
+}
+
+.championship__table__line-score{
+    width: 30px;
+    text-align: center;
+}
+
+.championship__table__line-games{
+    width: 30px;
+    margin-right: 10px;
+    text-align: center;
+}
+/*  End championship table*/
+
+
+/*  Start description table*/
+
+.table__description {
+    margin-top: 35px;
+    margin-bottom: 75px;
+    padding: 2.5px 0;
+}
+
+.table__description-item{
+    display:flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.table__description-color{
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+}
+/*  End description table*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
