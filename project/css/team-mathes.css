@@ -1,0 +1,212 @@
+body {
+    background-color: #696969;
+}
+
+
+/* Start mathes title */
+
+.matche {
+    padding-top: 50px;
+}
+
+.matches__title {
+    height: 115px;
+    padding: 22.5px 0;
+    border-bottom: .5px solid #404040;
+}
+
+.matches__container__title {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.team__value {
+    margin-left: 10px;
+    margin: auto 0;
+}
+
+.team__value-stadium {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.team__value {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.matches__championship{
+    margin: auto 0;
+    margin-left: auto;
+}
+
+.championship__value{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    font-size: 12px;
+}
+
+.championship__value-name{
+    margin-right: 10px;
+    padding-top: 7px;
+    color: rgba(255,255,255,.75);
+}
+
+.championship__country__icon-picture{
+    height: 30px;
+}
+/* End matches title */
+
+/*Start Matches*/
+
+/* Start Bets */
+.bet__title{
+    height: 35px;
+    width: 100%;
+    padding: 2.5px 0;
+    background-color: #404040;
+}
+
+.bet__container__title-name{
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 7px 0;
+}
+
+.bet__container__title-date{
+    padding: 7px 0;
+    margin-left: auto;
+    opacity: .75;
+}
+
+.bet__container__title{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bet{
+    width: 100%;
+    height: 140px;
+    border-bottom: .5px solid #404040;
+}
+
+.bet__container__filling{
+    padding: 5px 0;
+}
+
+.bet__championship{
+    display: flex;
+    flex-wrap: wrap;
+    opacity: .75;
+}
+
+.bet__championship-country{
+    margin-right: 10px;
+}
+
+.bet__championship-country-name{
+    padding: 9px 0;
+}
+
+.bet__championship-delimiter{
+    padding: 9px 0;
+}
+
+.bet__championship-name{
+    padding: 9px 0;
+}
+
+.bet__match{
+    height: 70px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bet__match__team{
+    width: 180px;
+    text-align: center;
+}
+
+.bet__match__team-picture{
+    height: 45px;
+}
+
+.bet__match__time{
+    margin:auto;
+}
+
+.bet__match__goals{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bet__match__time-value{
+    text-align: center;
+}
+
+.bet__match__date{
+    font-size: 12px;
+    color: rgba(255,255,255,.75);
+}
+
+.bet_match_goal-delimiter{
+    margin: 0px 5px;
+}
+
+.bet__container__coefficient{
+    transition: .3s;
+    padding: 0 20px;
+    background-color: #404040;
+    border-radius: 5px;
+    height: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bet__container__coefficient:hover{
+    background-color: #728ADD;
+    cursor: pointer;
+}
+
+.bet__coefficient{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bet__coefficient{
+    font-size: 12px;
+}
+
+.bet__coefficient-name{
+    font-weight: 700;
+    padding: 9px 0;
+    padding-right: 3px;
+}
+
+.bet__coefficient-value{
+    font-size: 16px;
+    padding: 7px 0;
+}
+/* End Bets */
+
+
+/*End Matches*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

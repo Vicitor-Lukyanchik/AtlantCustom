@@ -1,0 +1,41 @@
+@media (min-width: 200px) {
+    .championship__value-name {
+        font-size: 0px;
+    }
+    .championship__country__icon-picture {
+        width: 0;
+    }
+    .bet__match__team {
+        width: 100px;
+    }
+}
+
+@media (min-width: 360px) {
+    .championship__country-name {
+        font-size: 0px;
+    }
+    .championship__country__icon-picture {
+        width: 30px;
+    }
+    .bet__match__team {
+        width: 130px;
+    }
+}
+
+@media (min-width: 480px) {
+    .championship__value-name {
+        font-size: 12px;
+    }
+    .bet__match__team {
+        width: 180px;
+    }
+}
+
+@media (min-width: 510px) {
+    .championship__value-name {
+        font-size: 16px;
+    }
+    .bet__match__team {
+        width: 190px;
+    }
+}
