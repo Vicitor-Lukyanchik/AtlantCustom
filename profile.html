@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VBet</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/adapt/menu.css">
+    <link rel="stylesheet" href="css/adapt/profile.css">
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon"> </head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="container__header">
+                <div class="header__logo">
+                    <a href="#" class="header__logo-link"> <img src="img/logo.svg" alt="logo" class="header__logo-picture"> </a>
+                </div>
+                <div class="header__name">
+                    <div class="header__name_first">VB</div>
+                    <div class="header__name_last">et</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="profile">
+        <div class="container">
+            <div class="profile__item">
+                <div class="profile__item-name">Имя</div>
+                <div class="profile__item-input">
+                    <div class="input__container">
+                        <input type="text" class="profile__input" value="" placeholder="Введите имя"> </div>
+                </div>
+                <div class="profile__item-error"></div>
+                <div class="profile__item-description">
+                    <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                    <div class="description__name">
+                        <div class="profile__container">от 2 до 150 символов</div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile__item">
+                <div class="profile__item-name">Фамилия</div>
+                <div class="profile__item-input">
+                    <div class="input__container">
+                        <input type="text" class="profile__input" value="" placeholder="Введите фамилию"> </div>
+                </div>
+                <div class="profile__item-error"></div>
+                <div class="profile__item-description">
+                    <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                    <div class="description__name">
+                        <div class="profile__container">от 2 до 150 символов</div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile__item profile__item__date">
+                <div class="profile__item-name">Дата рождения</div>
+                <div class="profile__item-input">
+                    <div class="input__container">
+                        <input max="2002-12-30" type="date" name="date" class="profile__input profile__input__date"> </div>
+                </div>
+            </div>
+            <div class="profile__item profile__item__locked">
+                <div class="profile__item-name">Логин</div>
+                <div class="profile__item-input">
+                    <div class="input__container">
+                        <input type="text" class="profile__input profile__noninput" value="victor_luk" placeholder="Введите логин" disabled> <img src="img/lock.svg" alt="Lock" class="lock"> </div>
+                </div>
+                <div class="profile__item-error"></div>
+            </div>
+            <div class="profile__item profile__item__locked">
+                <div class="profile__item-name">Email</div>
+                <div class="profile__item-input">
+                    <div class="input__container">
+                        <input type="text" class="profile__input profile__noninput" value="victorlukyanchik15@gmail.com" placeholder="Введите email" disabled><img src="img/lock.svg" alt="Lock" class="lock"></div>
+                </div>
+                <div class="profile__item-error"></div>
+            </div>
+            <div class="profile__item">
+                <div class="profile__item-name">Пароль</div>
+                <div class="profile__item-input">
+                    <div class="input__container">
+                        <input type="password" class="profile__input" value="" placeholder="Введите пароль"></div>
+                </div>
+                <div class="profile__item-error"></div>
+                <div class="profile__item-description">
+                    <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                    <div class="description__name">
+                        <div class="profile__container">от 6 до 60 символов</div>
+                    </div>
+                </div>
+                   <div class="profile__item-description">
+                    <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                    <div class="description__name">
+                        <div class="profile__container">только цифры и буквы латинского алфавита</div>
+                </div>
+            </div>
+        </div>
+        <div class="profile__item">
+            <div class="profile__item-name">Повторите пароль</div>
+            <div class="profile__item-input">
+                <div class="input__container">
+                    <input type="password" class="profile__input" value="" placeholder="Введите пароль повторно"> </div>
+            </div>
+            <div class="profile__item-error"></div>
+            <div class="profile__item-description">
+                    <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                    <div class="description__name">
+                        <div class="profile__container">от 6 до 60 символов</div>
+                    </div>
+                </div>
+                   <div class="profile__item-description">
+                    <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                    <div class="description__name">
+                        <div class="profile__container">только цифры и буквы латинского алфавита</div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="profile__button">
+        <div class="container">
+            <div class="save__button">
+                <input value="Сохранить" type="button" class="save__input">
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="container__footer">
+                <ul class="footer__menu">
+                    <li class="footer__menu-item">
+                        <a href="main.html"> <img src="img/MenuItemHome.svg" alt="Home" class="footer__menu-picture"> </a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="balance.html"> <img src="img/MenuItemBalance.svg" alt="Balance" class="footer__menu-picture"> </a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="profile.html"> <img src="img/MenuItemProfile.svg" alt="Profile" class="footer__menu-picture footer__menu-active-item"> </a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="bets.html"> <img src="img/MenuItemBets.svg" alt="Bets" class="footer__menu-picture"> </a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#"> <img src="img/MenuItemLogout.svg" alt="Logout" class="footer__menu-picture"> </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

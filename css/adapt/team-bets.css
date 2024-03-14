@@ -1,0 +1,17 @@
+@media (min-width: 200px) {
+    .match__team {
+        width: 100px;
+    }
+}
+
+@media (min-width: 340px) {
+    .match__team {
+        width: 120px;
+    }
+}
+
+@media (min-width: 475px) {
+    .match__team {
+        width: 180px;
+    }
+}

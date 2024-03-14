@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VBet</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/adapt/menu.css">
+    <link rel="stylesheet" href="css/adapt/login.css">
+    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+    <script type="text/javascript" src="/js/LoginMenuBuilder.js"></script>
+    <script type="text/javascript" src="/jquery/jquery-3.7.1.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="container__header">
+            <div class="header__name">
+                Войти
+            </div>
+            <div class="header__cross">
+                <a href="main.html"><img src="img/Cross.svg" alt="Cross" class="header__cross-img"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="profile">
+    <div class="container">
+        <div class="profile__item">
+            <div class="profile__item-name">Логин</div>
+            <div class="profile__item-input">
+                <div class="input__container">
+                    <input id="login" type="text" class="profile__input profile__noninput" value=""
+                           placeholder="Введите логин"> </div>
+            </div>
+            <div class="profile__item-error"></div>
+            <div class="profile__item-description">
+                <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                <div class="description__name">
+                    <div class="profile__container">от 6 до 60 символов</div>
+                </div>
+            </div>
+            <div class="profile__item-description">
+                <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                <div class="description__name">
+                    <div class="profile__container">только цифры и буквы латинского алфавита</div>
+                </div>
+            </div>
+        </div>
+        <div class="profile__item">
+            <div class="profile__item-name">Пароль</div>
+            <div class="profile__item-input">
+                <div class="input__container">
+                    <input id="password" type="password" class="profile__input" value="" placeholder="Введите пароль"></div>
+            </div>
+            <div class="profile__item-error"></div>
+            <div class="profile__item-description">
+                <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                <div class="description__name">
+                    <div class="profile__container">от 6 до 60 символов</div>
+                </div>
+            </div>
+            <div class="profile__item-description">
+                <div class="description__point"><img src="img/point.svg" alt="Point" class="point"></div>
+                <div class="description__name">
+                    <div class="profile__container">только цифры и буквы латинского алфавита</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile__button">
+        <div class="container">
+            <div class="save__button">
+                <input value="Войти" type="button" class="save__input">
+            </div>
+            <div class="login__question">
+                <div class="login__question-title">Еще нет аккаунта?</div>
+                <div class="login__question-link"><a href="register.html">Зарегистрироваться</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+<script>
+    $("html").on('click', function() {
+        var hasTouchScreen = false;
+
+        if ("maxTouchPoints" in navigator) {
+            hasTouchScreen = navigator.maxTouchPoints > 0;
+        }
+
+        if (hasTouchScreen) {
+            if($(".profile__input").is(":focus")){
+                $(".profile").css("margin-top", "130px");
+            } else{
+                $(".profile").css("margin-top", "130px");
+            }
+        }
+    });
+
+    $(".profile__item").on('click', function() {
+        $(".profile__input").focus();
+    });
+</script>
+</html>

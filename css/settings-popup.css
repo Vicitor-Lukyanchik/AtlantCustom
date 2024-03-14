@@ -1,0 +1,57 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    background: #696969;
+    position: relative;
+    transition: all 1s ease-in-out;
+    width: 100%;
+    height: 260px;
+    margin-top: 60%;
+    border-radius: 5px;
+}
+
+.popup__container{
+    padding: 0 40px;
+}
+
+.popup__header{
+    height: 35px;
+    background-color: #404040;
+    padding: 9.5px 0;
+}
+
+.popup__container__header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+.popup__balance{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.popup__balance-size{
+    margin-right: 3px;
+}
+
+.popup__close-img{
+    height: 16px;
+    width: 16px;
+    margin-bottom: 1px;
+}

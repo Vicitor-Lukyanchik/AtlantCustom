@@ -1,0 +1,180 @@
+body{
+    background-color: #696969;
+}
+
+/* Start Championship */
+.championship{
+    padding-top:100px;
+}
+
+.championship__title{
+    height: 35px;
+    width: 100%;
+    padding: 2.5px 0;
+    background-color: #404040;
+}
+
+
+.championship__container__title{
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 7px 0;
+}
+
+.championship__filling{
+    width: 100%;
+    height: 50px;
+    border-bottom: .5px solid #404040;
+    transition: .3s;
+}
+
+.championship__filling:hover {
+    background-color: rgba(255,255,255,.1);
+}
+
+.championship__filling:hover a{
+    background-color: rgba(255,255,255,.1);
+    cursor: pointer;
+}
+
+.championship__container__filling{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 20px;
+}
+
+.championship__item-name{
+    margin-left: 10px;
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.championship__country-name{
+    text-transform: uppercase;
+    opacity: .75;
+}
+
+.championship__name{
+    font-weight: 700;
+}
+
+/* End Championship */
+
+
+/* Start Bets */
+.bet{
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.bet__title{
+    height: 35px;
+    width: 100%;
+    padding: 2.5px 0;
+    background-color: #404040;
+}
+
+.bet__container__title-name{
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 7px 0;
+}
+
+.bet__container__title-date{
+    padding: 7px 0;
+    margin-left: auto;
+    opacity: .75;
+}
+
+.bet__container__title{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bet__filling{
+    width: 100%;
+    height: 140px;
+    border-bottom: .5px solid #404040;
+}
+
+.bet__container__filling{
+    padding: 5px 0;
+}
+
+.bet__championship{
+    display: flex;
+    flex-wrap: wrap;
+    opacity: .75;
+}
+
+.bet__championship-country{
+    margin-right: 10px;
+}
+
+.bet__championship-country-name{
+    padding: 9px 0;
+}
+
+.bet__championship-delimiter{
+    padding: 9px 0;
+}
+
+.bet__championship-name{
+    padding: 9px 0;
+}
+
+.bet__match{
+    height: 70px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bet__match__team{
+    width: 190px;
+    text-align: center;
+}
+
+.bet__match__team-picture{
+    height: 45px;
+}
+
+.bet__match__time{
+    margin:auto;
+}
+
+.bet__container__coefficient{
+    transition: .3s;
+    padding: 0 20px;
+    background-color: #404040;
+    border-radius: 5px;
+    height: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bet__container__coefficient:hover{
+    background-color: #728ADD;
+    cursor: pointer;
+}
+
+.bet__coefficient{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bet__coefficient{
+    font-size: 12px;
+}
+
+.bet__coefficient-name{
+    font-weight: 700;
+    padding: 9px 0;
+    padding-right: 3px;
+}
+
+.bet__coefficient-value{
+    font-size: 14px;
+    padding: 7px 0;
+}
+/* End Bets */
