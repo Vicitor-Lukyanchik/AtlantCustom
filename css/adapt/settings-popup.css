@@ -1,0 +1,11 @@
+@media (min-width: 200px) {
+    .popup__bet__size-title {
+        font-size: 0px;
+    }
+}
+
+@media (min-width: 430px) {
+    .popup__bet__size-title {
+      font-size: 12px;
+    }
+}

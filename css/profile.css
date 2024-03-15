@@ -1,0 +1,137 @@
+body {
+    background-color: #696969;
+}
+
+
+/* Start Profile */
+
+.profile {
+    margin-top: 100px;
+    margin-bottom: 235px;
+}
+
+.profile__item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.profile__item__date{
+    width: 190px;
+}
+
+.profile__item-input {
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 5px;
+}
+
+.profile__item-name {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.input__container {
+    margin: 1px 30px 0;
+    position: relative;
+}
+
+.profile__container {
+    margin: 9px 30px;
+}
+
+.profile__input {
+    color: #fff;
+    background-color: #696969;
+    border: none;
+    width: 100%;
+    height: 37px;
+}
+
+.profile__noninput{
+    user-select: none;
+}
+
+.profile__input__date{
+    color: #fff;
+    color-scheme: dark;
+}
+
+.description__point {
+    padding: 9px 0;
+}
+
+.profile__item-description{
+    display: flex;
+    user-select: none;
+    position: absolute;
+    top: 80%;
+    opacity: 0;
+    transition: .25s;
+    font-size: 14px;
+}
+
+.profile__item:hover .profile__item-description{
+    opacity: 1;
+    top: 100%;
+    position: relative;
+}
+
+.profile__item-error{
+    margin: 9px 30px 0;
+    color: rgba(221,0,0,1);
+    transition: .25s
+}
+
+.profile__item:hover .profile__item-error{
+    opacity: 0;
+    font-size: 0;
+}
+.profile__item:hover .profile__item-input{
+    border: 1px solid rgba(255, 255, 255, .7);
+}
+
+.profile__item__locked:hover .profile__item-input{
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+
+.lock{
+    position: absolute;
+    right: -5%;
+    top: 10%;
+}
+/* End Profile */
+
+/* Start button*/
+
+.profile__button{
+    position: fixed;
+    bottom: 90px;
+    width: 100%;
+}
+
+.save__button{
+    height: 65px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: #404040;
+    transition: .25s;
+}
+
+.save__button:hover{
+    background-color: rgba(69,69,69,.75);
+}
+
+.save__input {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    height: 65px;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+
+/* End button*/

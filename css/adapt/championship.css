@@ -1,0 +1,25 @@
+@media (min-width: 200px){
+    .championship__country-name {
+        font-size: 0px;
+    }
+
+    .championship__country__flag-picture{
+        width: 0;
+    }
+}
+
+@media (min-width: 360px){
+    .championship__country-name {
+        font-size: 0px;
+    }
+
+    .championship__country__flag-picture{
+        width: 30px;
+    }
+}
+
+@media (min-width: 430px){
+    .championship__country-name {
+        font-size: 16px;
+    }
+}
